@@ -1,0 +1,20 @@
+{
+  "Group": "Tenzinn",
+  "Name": "RoleSystem",
+  "Version": "0.1.0",
+  "Description": "Is a Hytale plugins for role-system.",
+  "Authors": [
+    {
+      "Name": "Tenzinn",
+      "Email": "santynrada+hytl@gmail.com",
+      "Url": "https://santiagorada.com/hytale"
+    }
+  ],
+  "Website": "https://santiagorada.com/hytale/",
+  "ServerVersion": "2026.03.26-89796e57b",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true,
+  "Main": "Tenzinn.RoleSystem"
+}

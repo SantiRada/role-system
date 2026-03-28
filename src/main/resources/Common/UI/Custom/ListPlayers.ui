@@ -1,0 +1,45 @@
+@Background = PatchStyle(TexturePath: "media/background.png");
+
+Group #Dashboard {
+    FlexWeight: 1;
+    LayoutMode: Middle;
+    Background: (Color: #000000(0.5));
+
+    Group #Window {
+        FlexWeight: 1;
+        LayoutMode: Top;
+        Padding: (Full: 32);
+        Background: @Background;
+        Anchor: (Left: 300, Right: 300, Top: 180, Bottom: 180);
+
+        Label #Title {
+            Anchor: (Bottom: 24);
+            Text: "List Players";
+            Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 32);
+        }
+
+        Group #Users {
+            LayoutMode: Top;
+
+            Group #Header {
+                FlexWeight: 1;
+                LayoutMode: Middle;
+                Padding: (Horizontal: 24);
+                Anchor: (Height: 60, Bottom: 6);
+                Background: (Color: #000000(0.1));
+
+                Group {
+                    LayoutMode: Left;
+
+                    Label {
+                        Text: "Players";
+                        Anchor: (Right: 12, Width: 200);
+                        Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 18);
+                    }
+                    Label { FlexWeight: 2; Text: "Statue"; Style: (TextColor: #FFFFFF(0.9), FontSize: 14, RenderBold: true, Alignment: Center); }
+                    Label { FlexWeight: 2; Text: "Role"; Style: (TextColor: #FFFFFF(0.9), FontSize: 14, RenderBold: true, Alignment: Center); }
+                }
+            }
+        }
+    }
+}
