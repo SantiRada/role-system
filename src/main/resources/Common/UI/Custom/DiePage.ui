@@ -1,0 +1,28 @@
+Group {
+    FlexWeight: 1;
+    LayoutMode: Middle;
+    Background: (Color: #000000(0.35));
+    Padding: (Full: 48);
+
+    Label {
+        Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 40);
+        Text: "Die Page";
+    }
+
+    Label #Timer {
+        Style: (TextColor: #FFFFFF, RenderBold: true, Alignment: Center, FontSize: 24);
+        Text: "00:00";
+    }
+
+    Button #RespawnButton {
+        LayoutMode: Center;
+        Anchor: (Width: 220);
+        Background: (Color: #202D3C);
+        Padding: (Horizontal: 20, Vertical: 10);
+
+        Label #RespawnText {
+            Style: (TextColor: #FFFFFF, RenderBold: true, Alignment: Center, FontSize: 24);
+            Text: "Respawn";
+        }
+    }
+}
