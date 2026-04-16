@@ -1,0 +1,11 @@
+# === benchCategories ===
+items.Bench_Medic.name = Medicbench
+items.Bench_Medic.description = A medical crafting table based on the alchemist's table, modified for medical use. Only players with the Doctor role can access and craft medical items on it.
+
+items.benchCategories.Medical_Items = Medical Items
+
+items.Bandage.name = Bandage
+items.Bandage.description = Basic healing item that restores a small amount of health over time; usable by all players, with increased effectiveness and speed when used by Doctors.
+
+items.Botiquin.name = Medical Kit
+items.Botiquin.description = Single-use advanced healing item that can revive unconscious players or fully heal living players; usable only by Doctors.

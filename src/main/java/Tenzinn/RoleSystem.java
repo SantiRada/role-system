@@ -1,9 +1,9 @@
 package Tenzinn;
 
-import Tenzinn.Commands.RespawnCommand;
-import Tenzinn.Events.DetectRejoinDead;
 import Tenzinn.JSON.Roles;
 import Tenzinn.Events.DetectDiePlayer;
+import Tenzinn.Commands.RespawnCommand;
+import Tenzinn.Events.DetectRejoinDead;
 import Tenzinn.Events.DetectPlayerReady;
 import Tenzinn.Commands.Roles.RoleCommands;
 import Tenzinn.Events.DetectPlayerDisconnect;
@@ -13,9 +13,9 @@ import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
 
-import javax.annotation.Nonnull;
 import java.util.Set;
 import java.util.UUID;
+import javax.annotation.Nonnull;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RoleSystem extends JavaPlugin {
