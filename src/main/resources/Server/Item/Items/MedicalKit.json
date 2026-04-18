@@ -1,0 +1,46 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.MedicalKit.name",
+    "Description": "server.items.MedicalKit.description"
+  },
+  "Parent": "Template_Food",
+  "Quality": "Uncommon",
+  "Icon": "Icons/ItemsGenerated/Plant_Fruit_Apple.png",
+  "BlockType": {
+    "Material": "Empty",
+    "DrawType": "Model",
+    "Opacity": "Semitransparent",
+    "CustomModel": "Resources/Ingredients/Apple.blockymodel",
+    "CustomModelTexture": [
+      { "Texture": "Resources/Ingredients/Apple_Red.png", "Weight": 1 }
+    ],
+    "ParticleColor": "#518e2e"
+  },
+  "InteractionVars": {
+    "Consume_Charge": {
+      "Interactions": [
+        {
+          "Parent": "Consume_Charge_Large"
+        }
+      ]
+    },
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "use_medical_kit"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      { "ItemId": "Ingredient_Bar_Copper", "Quantity": 2 }
+    ],
+    "BenchRequirement": [
+      { "Id": "medicalbench", "Categories": ["Medical_Items"] }
+    ]
+  },
+  "Scale": 1.75,
+  "MaxStack": 1,
+  "DropOnDeath": true
+}

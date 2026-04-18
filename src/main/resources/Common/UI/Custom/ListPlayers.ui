@@ -1,45 +1,92 @@
-@Background = PatchStyle(TexturePath: "media/background.png");
+$C = "Common.ui";
 
+// Overlay oscuro de fondo
 Group #Dashboard {
     FlexWeight: 1;
     LayoutMode: Middle;
-    Background: (Color: #000000(0.5));
+    Background: (Color: #000000(0.55));
 
+    // Panel principal
     Group #Window {
-        FlexWeight: 1;
         LayoutMode: Top;
-        Padding: (Full: 32);
-        Background: @Background;
-        Anchor: (Left: 300, Right: 300, Top: 180, Bottom: 180);
+        Padding: (Horizontal: 40, Vertical: 32);
+        Background: (Color: #0D1117(0.93));
+        Anchor: (Left: 400, Right: 400, Top: 140, Bottom: 140);
 
-        Label #Title {
-            Anchor: (Bottom: 24);
-            Text: "List Players";
-            Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 32);
+        // Encabezado con título y subtítulo
+        Group {
+            LayoutMode: Top;
+            Anchor: (Bottom: 20);
+
+            Label #Title {
+                Anchor: (Height: 44);
+                Text: "List Players";
+                Style: (
+                    TextColor: #FFFFFF,
+                    RenderBold: true,
+                    FontSize: 28
+                );
+            }
+
+            // Línea decorativa bajo el título
+            Group {
+                Anchor: (Height: 2, Top: 6);
+                Background: (Color: #FFFFFF(0.12));
+            }
         }
 
+        // Tabla
         Group #Users {
             LayoutMode: Top;
 
+            // Fila de cabeceras
             Group #Header {
-                FlexWeight: 1;
                 LayoutMode: Middle;
-                Padding: (Horizontal: 24);
-                Anchor: (Height: 60, Bottom: 6);
-                Background: (Color: #000000(0.1));
+                Padding: (Horizontal: 20);
+                Anchor: (Height: 40, Bottom: 4);
+                Background: (Color: #000000(0.25));
 
                 Group {
                     LayoutMode: Left;
 
                     Label {
-                        Text: "Players";
-                        Anchor: (Right: 12, Width: 200);
-                        Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 18);
+                        Text: "Jugador";
+                        Anchor: (Width: 220);
+                        Style: (
+                            TextColor: #8B9BAE,
+                            RenderBold: true,
+                            FontSize: 11,
+                            RenderUppercase: true
+                        );
                     }
-                    Label { FlexWeight: 2; Text: "Statue"; Style: (TextColor: #FFFFFF(0.9), FontSize: 14, RenderBold: true, Alignment: Center); }
-                    Label { FlexWeight: 2; Text: "Role"; Style: (TextColor: #FFFFFF(0.9), FontSize: 14, RenderBold: true, Alignment: Center); }
+
+                    Label {
+                        FlexWeight: 2;
+                        Text: "Estado";
+                        Style: (
+                            TextColor: #8B9BAE,
+                            RenderBold: true,
+                            FontSize: 11,
+                            RenderUppercase: true,
+                            Alignment: Center
+                        );
+                    }
+
+                    Label {
+                        FlexWeight: 2;
+                        Text: "Rol";
+                        Style: (
+                            TextColor: #8B9BAE,
+                            RenderBold: true,
+                            FontSize: 11,
+                            RenderUppercase: true,
+                            Alignment: Center
+                        );
+                    }
                 }
             }
+
+            // Las filas de jugadores se inyectan aquí via appendInline("#Users", ...)
         }
     }
 }

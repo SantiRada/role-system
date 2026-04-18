@@ -42,36 +42,56 @@ public class RoleListAdminPage extends InteractiveCustomUIPage<BasicEvent> {
         sendUpdate();
     }
     private void loadContent(PlayerRef player) {
-        String name = player.getUsername();
-
-        String role = RoleController.getOnePlayer(name).toUpperCase();
+        String name   = player.getUsername();
+        String role   = RoleController.getOnePlayer(name).toUpperCase();
         String status = RoleController.getStatusPlayer(name);
 
-        if(!filterRole.isEmpty()) { if(!role.toUpperCase().equalsIgnoreCase(filterRole)) return; }
+        if (!filterRole.isEmpty() && !role.equalsIgnoreCase(filterRole)) return;
+
+        // Color según estado
+        String statusColor = switch (status) {
+            case "ACTIVE"     -> "#5ECC7B";  // verde
+            case "UNDEFINED"  -> "#E0A752";  // amarillo
+            default           -> "#8B9BAE";  // gris
+        };
+
+        // Color según rol
+        String roleColor = switch (role) {
+            case "MEDIC"    -> "#52A8E0";   // azul
+            case "SOLDIER"  -> "#E05252";   // rojo
+            default         -> "#8B9BAE";   // gris si no tiene rol
+        };
+
+        String roleText   = role.isEmpty()   ? "Sin rol"   : role;
+        String statusText = status.isEmpty() ? "Inactivo"  : status;
 
         String inlineUI =
                 "Group {\n" +
-                        "    FlexWeight: 1;\n" +
                         "    LayoutMode: Middle;\n" +
-                        "    Padding: (Horizontal: 24);\n" +
-                        "    Anchor: (Height: 60, Bottom: 6);\n" +
-                        "    Background: (Color: #FFFFFF(0.05));\n" +
+                        "    Padding: (Horizontal: 20);\n" +
+                        "    Anchor: (Height: 52, Bottom: 3);\n" +
+                        "    Background: (Color: #FFFFFF(0.04));\n" +
                         "\n" +
                         "    Group {\n" +
                         "        LayoutMode: Left;\n" +
                         "\n" +
                         "        Label {\n" +
                         "            Text: \"" + escapeUiString(name) + "\";\n" +
-                        "            Anchor: (Right: 12, Width: 200);\n" +
-                        "            Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 18);\n" +
+                        "            Anchor: (Width: 220);\n" +
+                        "            Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 15);\n" +
                         "        }\n" +
                         "\n" +
-                        "        " +
-                        "Label { FlexWeight: 2; Text: \"" + status + "\"; " +
-                        "Style: (TextColor: #FFFFFF, FontSize: 14, Alignment: Center); }\n" +
-                        "        " +
-                        "Label { FlexWeight: 2; Text: \"" + role + "\"; " +
-                        "Style: (TextColor: #FFFFFF, FontSize: 14, Alignment: Center); }\n" +
+                        "        Label {\n" +
+                        "            FlexWeight: 2;\n" +
+                        "            Text: \"" + statusText + "\";\n" +
+                        "            Style: (TextColor: " + statusColor + ", FontSize: 13, Alignment: Center);\n" +
+                        "        }\n" +
+                        "\n" +
+                        "        Label {\n" +
+                        "            FlexWeight: 2;\n" +
+                        "            Text: \"" + roleText + "\";\n" +
+                        "            Style: (TextColor: " + roleColor + ", RenderBold: true, FontSize: 13, Alignment: Center);\n" +
+                        "        }\n" +
                         "    }\n" +
                         "}";
 

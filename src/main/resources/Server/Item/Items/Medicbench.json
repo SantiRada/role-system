@@ -1,9 +1,9 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Bench_Medic.name",
-    "Description": "server.items.Bench_Medic.description"
+    "Name": "server.items.Medicbench.name",
+    "Description": "server.items.Medicbench.description"
   },
-  "Icon": "Icons/ItemsGenerated/Bench_Alchemy.png",
+  "Icon": "Icons/ItemsGenerated/OP_Workbench.png",
   "Categories": [
     "Furniture.Benches"
   ],
@@ -11,10 +11,10 @@
     "Material": "Solid",
     "DrawType": "Model",
     "Opacity": "Transparent",
-    "CustomModel": "Blocks/Benches/Alchemy.blockymodel",
+    "CustomModel": "Blocks/Benches/OP_Workbench.blockymodel",
     "CustomModelTexture": [
       {
-        "Texture": "Blocks/Benches/Alchemy_Texture.png",
+        "Texture": "Blocks/Benches/OP_Workbench_Texture.png",
         "Weight": 1
       }
     ],

@@ -1,0 +1,7 @@
+{
+  "Duration": 10,
+  "ApplicationEffects": {
+    "HorizontalSpeedMultiplier": 0.25,
+    "KnockbackMultiplier": 0
+  }
+}

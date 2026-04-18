@@ -1,28 +1,60 @@
-Group {
-    FlexWeight: 1;
+$C = "Common.ui";
+
+$C.@PageOverlay {
     LayoutMode: Middle;
-    Background: (Color: #000000(0.35));
-    Padding: (Full: 48);
 
-    Label {
-        Style: (TextColor: #FFFFFF, RenderBold: true, FontSize: 40);
-        Text: "Die Page";
-    }
+    Group {
+        LayoutMode: Top;
+        Anchor: (Width: 360);
+        Background: (Color: #0D1117(0.93));
+        Padding: (Horizontal: 40, Vertical: 36);
 
-    Label #Timer {
-        Style: (TextColor: #FFFFFF, RenderBold: true, Alignment: Center, FontSize: 24);
-        Text: "00:00";
-    }
+        Label {
+            Anchor: (Height: 48);
+            Style: (
+                FontSize: 22,
+                TextColor: #E05252,
+                RenderBold: true,
+                RenderUppercase: true,
+                HorizontalAlignment: Center
+            );
+            Text: "You are dead.";
+        }
 
-    Button #RespawnButton {
-        LayoutMode: Center;
-        Anchor: (Width: 220);
-        Background: (Color: #202D3C);
-        Padding: (Horizontal: 20, Vertical: 10);
+        Group {
+            Anchor: (Height: 2, Top: 2, Bottom: 18);
+            Background: (Color: #E05252(0.25));
+        }
 
-        Label #RespawnText {
-            Style: (TextColor: #FFFFFF, RenderBold: true, Alignment: Center, FontSize: 24);
-            Text: "Respawn";
+        Label {
+            Anchor: (Height: 20, Bottom: 6);
+            Style: (
+                FontSize: 12,
+                TextColor: #8B9BAE,
+                HorizontalAlignment: Center
+            );
+            Text: "Available respawn in";
+        }
+
+        Label #Timer {
+            Anchor: (Height: 60);
+            Style: (
+                FontSize: 46,
+                TextColor: #FFFFFF,
+                RenderBold: true,
+                HorizontalAlignment: Center
+            );
+            Text: "00:00";
+        }
+
+        Group {
+            Anchor: (Height: 2, Top: 18, Bottom: 22);
+            Background: (Color: #FFFFFF(0.07));
+        }
+
+        $C.@TextButton #RespawnButton {
+            @Text = "Respawn";
+            Anchor: (Height: 44);
         }
     }
 }
